@@ -1,7 +1,7 @@
 ﻿namespace FribergHome_API.Models
 {
-    // Christoffer was here
-    public class RealEstateAgency
+    // Author: Christoffer
+    public class RealEstateAgency : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

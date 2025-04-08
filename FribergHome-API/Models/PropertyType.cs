@@ -1,6 +1,6 @@
 ﻿namespace FribergHome_API.Models
 {
-    // Christoffer was here
+    // Author: Christoffer
     public enum PropertyType
     {
         None = 0,
