@@ -1,0 +1,14 @@
+﻿namespace FribergHome_API.Models
+{
+    // Author: Christoffer
+    public class RealEstateAgency : IEntity
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Presentation { get; set; }
+        public string LogoUrl { get; set; }
+
+        // Navigation
+        public virtual ICollection<RealEstateAgent> Agents { get; set; }
+    }
+}
