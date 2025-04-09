@@ -34,7 +34,7 @@ namespace FribergHome_API.Models
         public PropertyType PropertyType { get; set; }
 
         // Navigation
-        public virtual ICollection<PropertyImage> Images { get; set; }
+        public virtual ICollection<PropertyImage> Images { get; set; } 
         public virtual Address Address { get; set; }
         public virtual Muncipality Muncipality { get; set; }
         public virtual RealEstateAgent RealEstateAgent { get; set; }

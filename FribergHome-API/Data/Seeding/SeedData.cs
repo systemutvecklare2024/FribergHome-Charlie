@@ -59,8 +59,12 @@ namespace FribergHome_API.Data.Seeding
 		{
 			string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Seeding", "sveriges_kommuner.json");
 			string jsonContent = File.ReadAllText(filePath);
+			if (jsonContent == null)
+			{
+				return;
+			}
 
-			List<string> names = JsonSerializer.Deserialize<List<string>>(jsonContent) ?? throw new FileNotFoundException(filePath);
+			List<string> names = JsonSerializer.Deserialize<List<string>>(jsonContent) ?? [];
 
 			if (names.Any())
 			{
@@ -73,15 +77,14 @@ namespace FribergHome_API.Data.Seeding
 				}
 			}
 			await ctx.SaveChangesAsync();
-
-
 		}
+
 		//Author: Glate
 		public static async Task SeedProperties(ApplicationDbContext ctx)
 		{
-
-			ctx.Properties.Add(new Property
+			var list = new List<Property>
 			{
+				new Property{
 				ListingPrice = 1000000,
 				LivingSpace = 1000,
 				SecondaryArea = 10,
@@ -103,11 +106,37 @@ namespace FribergHome_API.Data.Seeding
 					PostalCode = "97334",
 					City = "Luleå",
 				},
-				Muncipality = ctx.Muncipalities.FirstAsync(m => m.Name == "Luleå").Result,
-				RealEstateAgent = ctx.Agents.FirstAsync(b => b.FirstName == "Berit").Result
-			});
+				Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Luleå"),
+				RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Berit")
+			},
+			new Property
+			{
+				ListingPrice = 200000,
+				LivingSpace = 200,
+				SecondaryArea = 20,
+				LotSize = 20,
+				Description = "Renoveringsobjekt. Gammalt crackhus. Perfekt för dig som vill sätta egen prägel och skapa ditt drömhem!",
+				NumberOfRooms = 2,
+				MonthlyFee = 2000,
+				OperationalCostPerYear = 20000,
+				YearBuilt = 1982,
+				PropertyType = PropertyType.TownHouse,
+				Images = new List<PropertyImage>
+				{
+					new PropertyImage { ImgURL = "https://miro.medium.com/v2/resize:fit:720/format:webp/1*yUhE4CUSnTP2e-mC3zx-qA.png"},
+					new PropertyImage {ImgURL = "https://i2-prod.cornwalllive.com/news/cornwall-news/article599640.ece/ALTERNATES/s1200e/1_Newquay.jpg" }
+				},
+				Address = new Address
+				{
+					Street = "Muskotvägen 24",
+					PostalCode = "18460",
+					City = "Åkersberga",
+				},
+				Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Stockholm"),
+				RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Bengt")
+			}};
+			ctx.Properties.AddRange(list);
 			await ctx.SaveChangesAsync();
 		}
-
 	}
 }
