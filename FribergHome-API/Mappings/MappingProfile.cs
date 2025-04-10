@@ -11,5 +11,5 @@ namespace FribergHome_API.Mappings
 			CreateMap<Property, PropertyDTO>()
 				.ReverseMap();
 		}
-	}
+	} 
 }
