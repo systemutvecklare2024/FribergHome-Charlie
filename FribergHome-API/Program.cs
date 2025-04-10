@@ -17,11 +17,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-// Injected Services
+// Injected Services 
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 
+builder.Services.AddAutoMapper(typeof(Program));
 
-
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -31,6 +32,8 @@ using (var scope = app.Services.CreateScope())
     var ctx = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     SeedData.SeedAsync(ctx).Wait();
 }
+//Cors middleware
+app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
