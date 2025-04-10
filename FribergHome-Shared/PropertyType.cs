@@ -1,4 +1,4 @@
-﻿namespace FribergHome_API.Models
+﻿namespace FribergHome_Shared
 {
     // Author: Christoffer
     public enum PropertyType
