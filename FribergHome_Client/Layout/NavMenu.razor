@@ -1,4 +1,47 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿<nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="pages/home"><img src="~/images/FribergHome.fig" alt="logo" style="width: 75px; height:auto; margin:0.3em" /></a>
+        <a class="navbar-brand" href="pages/home">FribergHome.nu</a>
+        <button class="navbar-toggler @NavButtonCssClass" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="pages/sokbostad" Match="NavLinkMatch.All">
+                        <span class="oi oi-home" aria-hidden="true"></span> Sök Bostad
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="pages/sokmaklare">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Sök Mäklare
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="pages/kundservice">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> Kundservice
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    private bool collapseNavMenu = true;
+    private string? NavBarCssClass => collapseNavMenu ? null : "show";
+    private string? NavButtonCssClass => collapseNavMenu ? "collapsed" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+
+
+@* <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">FribergHome_Client</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -37,3 +80,4 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+ *@
