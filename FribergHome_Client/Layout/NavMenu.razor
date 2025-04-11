@@ -1,27 +1,36 @@
 ﻿<nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="pages/home"><img src="~/images/LoggaFribergHome.png" alt="logo" style="width: 75px; height:auto; margin:0.3em" /></a>
-        <a class="navbar-brand" href="pages/home">FribergHome.nu</a>
+        <!-- Vänstersidan (logga + namn) -->
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="/">
+                <img src="~/images/LoggaFribergHome.png" alt="logo" style="width: 75px; height:auto; margin:0.3em" />
+            </a>
+            <a class="navbar-brand" href="/">FribergHome.nu</a>
+        </div>
+
+        <!-- Toggler (mobilmeny) -->
         <button class="navbar-toggler @NavButtonCssClass" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-label="Toggle navigation" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse @NavBarCssClass" id="navbarCollapse" @onclick="ToggleNavMenu">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+        <!-- Höger sida: Nav-links -->
+        <div class="collapse navbar-collapse @NavBarCssClass ms-auto" id="navbarCollapse" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="pages/sokbostad" Match="NavLinkMatch.All">
-                        <span class="oi oi-home" aria-hidden="true"></span> Sök Bostad
-                    </NavLink>
+                    <NavLink class="nav-link" href="/searchproperty" Match="NavLinkMatch.All">Sök Bostad</NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="pages/sokmaklare">
-                        <span class="oi oi-plus" aria-hidden="true"></span> Sök Mäklare
-                    </NavLink>
+                    <NavLink class="nav-link" href="/searchrealestateagent">Sök Mäklare</NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="pages/kundservice">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Kundservice
-                    </NavLink>
+                    <NavLink class="nav-link" href="/customerservice">Kundservice</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/dashboard">Dashboard</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/login">Logga in</NavLink>
                 </li>
             </ul>
         </div>
