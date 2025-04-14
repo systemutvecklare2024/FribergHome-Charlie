@@ -27,18 +27,19 @@ namespace FribergHome_API.Controllers
 		public async Task<ActionResult> Get()
 		{
 			var properties =  await _propertyRepo.GetAllAsync() ?? [];
-			if (properties == null) 
+			var dto = _mapper.Map<List<PropertyDTO>>(properties);
+			if (dto == null) 
 			{ 
 				return NotFound();
 			}
-			return Ok(properties);
+			return Ok(dto);
 		}
 
 		// GET api/<PropertiesController>/5
 		[HttpGet("{id}")]
 		public async Task<ActionResult> Get(int id)
 		{
-			var property = await _propertyRepo.GetAsync(id);
+			var property = await _propertyRepo.GetWithAddressAsync(id);
 
 			var DTO = _mapper.Map<PropertyDTO>(property);
 

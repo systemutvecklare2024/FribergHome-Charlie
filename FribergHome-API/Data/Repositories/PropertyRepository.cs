@@ -15,5 +15,10 @@ namespace FribergHome_API.Data.Repositories
                 .Where(e => e.Muncipality == muncipality)
                 .ToListAsync();
         }
+
+        public async Task<Property?> GetWithAddressAsync(int id)
+        {
+            return await DbContext.Set<Property>().Include(p => p.Address).FirstOrDefaultAsync(e => e.Id == id);
+        }
     }
 }

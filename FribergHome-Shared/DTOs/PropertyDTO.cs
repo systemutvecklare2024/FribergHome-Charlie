@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using static FribergHome_Shared.PropertyTypes;
 
 namespace FribergHome_Shared.DTOs
 {
@@ -30,5 +25,13 @@ namespace FribergHome_Shared.DTOs
 		public decimal OperationalCostPerYear { get; set; }
 		public int YearBuilt { get; set; }
 		public PropertyType PropertyType { get; set; }
-	}
+
+		public string Street { get; set; }
+		public string City { get; set; }
+		public string PostalCode { get; set; }
+		public int MuncipalityId { get; set; }
+
+		public List<string> ImageUrls { get; set; }
+
+    }
 }

@@ -1,0 +1,25 @@
+﻿@using FribergHome_Shared.DTOs
+@inject HttpClient Http
+
+
+<h3>ListProperties</h3>
+@if(properties == null)
+{
+    <p>Loading...</p>
+} else
+{
+    @foreach(var property in properties)
+    {
+        <PropertyCard Property="@property"></PropertyCard>
+    }
+}
+
+@code {
+    // Call api fetch stuff
+    List<PropertyDTO?> properties;
+
+    protected override async Task OnInitializedAsync()
+    {
+        properties = await Http.GetFromJsonAsync<List<PropertyDTO>>("api/Properties");
+    }
+}

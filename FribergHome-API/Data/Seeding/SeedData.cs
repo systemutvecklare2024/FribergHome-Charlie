@@ -2,6 +2,7 @@
 using FribergHome_API.Models;
 using Microsoft.EntityFrameworkCore;
 using FribergHome_Shared;
+using static FribergHome_Shared.PropertyTypes;
 
 namespace FribergHome_API.Data.Seeding
 {
