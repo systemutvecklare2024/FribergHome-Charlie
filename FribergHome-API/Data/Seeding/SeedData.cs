@@ -301,6 +301,89 @@ namespace FribergHome_API.Data.Seeding
                 },
                 Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Mönsterås"),
                 RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Bengt")
+            },
+            new Property
+            {
+                ListingPrice = 4500000,
+                LivingSpace = 119,
+                SecondaryArea = 0,
+                LotSize = 1169,
+                Description = "Denna ombyggda och renoverade 1900-talsvilla är en sällsynt pärla i utkanten av charmiga Torekov. Med baksida som bjuder på en fantastisk havsutsikt mot öppet jordbrukslandskap, garanteras avkoppling och fridfullhet. Huset har varsamt bevarats och uppdaterats med kärlek, senast av nuvarande ägare. Bostaden rymmer 4 rum och kök, fördelat på två allrum, två sovrum och två badrum, dessutom finns det en sovalkov i ovanvåningen för den som behöver fler sängplatser. Nytt och lantligt kök från 2023 med stor matplats i anslutning. Extra utrymme erbjuds i det äldre gästhuset där bara fantasin sätter gränser. Isolerad garagebyggnad som fungerar perfekt som förråd eller verkstad. Torekovs idylliska atmosfär med sneda kullerstensgator och närhet till både golfbana och havet gör detta till en dröm som både permanentboende och sommaridyll.",
+                NumberOfRooms = 4,
+                MonthlyFee = 0,
+                OperationalCostPerYear = 19500,
+                YearBuilt = 1913,
+                PropertyType = PropertyType.VacationHouse,
+                Images = new List<PropertyImage>
+                {
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/ec/9a/ec9adf18f71942173122892e37df98f1.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/81/80/8180ad62b4f4bc40c8a9d0a1deb3d825.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/dc/5a/dc5a584020a5c18318fa8ae0953ab80b.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/66/ba/66babc26db741e45f191f69956826627.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/3c/af/3caf9538b676b54c0648776428312abd.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/1d/33/1d332c0f33ec6182cdb5dae4c61e3fa1.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/8c/0c/8c0cc41632a0bcf52d1e153aa5cf596a.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/6a/98/6a988ef6d056e490fb8a447e6f4624af.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/88/85/88853750c553ea5046e99c03ba298f82.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/a5/f5/a5f553bf708961b9c12081647bd00cee.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/fd/ae/fdae838858dacb29d5871a3f95b2fed0.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/a2/b9/a2b98820a433dc18b3248870cb70d2f7.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/2a/39/2a393044ecdf31f8d1d8710977c3bfaf.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/c3/b5/c3b540406d4aeef09de30449cb86f848.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/e4/2c/e42cb413ed16206e4a5e4be50fcd2efb.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/e0/2b/e02b2cf447446751d4e8da896953a460.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/df/bf/dfbff690952ee0f0f085aff172cb23ca.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/4e/f5/4ef524fcfb3ff7fe021ef78a35d6c390.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/28/e2/28e21e2d1db233056aef2f2c53261b5d.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_portrait_cut/aa/15/aa150dbaf2ee6a16e79ff0e8e28a38e9.jpg"},
+                    new PropertyImage { ImgURL = "https://bilder.hemnet.se/images/itemgallery_cut/1f/21/1f216ba83942ccd8e199fc9191f45e2e.jpg"}
+                },
+                Address = new Address
+                {
+                    Street = "Erik Staels väg 12",
+                    PostalCode = "302 75",
+                    City = "Halmstad",
+                },
+                Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Halmstad"),
+                RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Bengt")
+            },
+            new Property
+            {
+                ListingPrice = 3975000,
+                LivingSpace = 60,
+                SecondaryArea = 0,
+                LotSize = 400,
+                Description = "Välkommen till detta stilfulla och välplanerade hem som kombinerar modern design med hög komfort! Här möts du av ljusa och luftiga ytor med öppen planlösning mellan kök, matplats och vardagsrum. Stora fönsterpartier ger ett härligt ljusinsläpp och skapar en naturlig koppling till den generösa altanen och poolområdet.\r\n\r\n\r\n\r\nHuset erbjuder flera sovrum, ett elegant badrum samt smarta förvaringslösningar. Det stilrena köket har gott om arbetsytor och moderna vitvaror – perfekt för både vardag och fest.\r\n\r\n\r\n\r\nPå tomten finns även en separat gäststuga, idealisk för övernattande gäster. Den stora altanen blir en naturlig samlingsplats och poolen gör utemiljön komplett.\r\n\r\n\r\n\r\nHär får du ett bekvämt och trivsamt boende med både stil och funktion!\r\n\r\n\r\n\r\nVälkommen att boka visning – detta hem vill du inte missa!",
+                NumberOfRooms = 4,
+                MonthlyFee = 0,
+                OperationalCostPerYear = 21200,
+                YearBuilt = 2020,
+                PropertyType = PropertyType.House,
+                Images = new List<PropertyImage>
+                {
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdooi6gvt6ka40.jpg?v=1739879385"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdookiavt6kaas.jpg?v=1744117073"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoovqcvt6kbkn.jpg?v=1744117074"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoogr0vt6ka0l.jpg?v=1744117075"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdooctuvt6k9jj.jpg?v=1744117077"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoom2mvt6kae7.jpg?v=1739879395"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoonsavt6kahl.jpg?v=1739879397"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoorrcvt6kart.jpg?v=1739879399"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdootkgvt6kava.jpg?v=1739879401"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoo8k4vt6k7sk.jpg?v=1739879402"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoojbovt6ka7e.jpg?v=1739879403"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjdoofgevt6k9t7.jpg?v=1739879450"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjbifik15lb17u3.jpg?v=1740055608"},
+                    new PropertyImage { ImgURL = "https://www.bjurfors.se/cdn-cgi/image/format=auto,fit=scale-down,width=1265,quality=80/contentassets/c5077d2340c747768f8fe09d8f8bc5c0/cbild5kjc95ii35m41715.jpg?v=1740055618"}
+                },
+                Address = new Address
+                {
+                    Street = "Ängalagsvägen 231",
+                    PostalCode = "269 95",
+                    City = "Båstad",
+                },
+                Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Båstad"),
+                RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Bengt")
             }};
 			ctx.Properties.AddRange(list);
 			await ctx.SaveChangesAsync();
