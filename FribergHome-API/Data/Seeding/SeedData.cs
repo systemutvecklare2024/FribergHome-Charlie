@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using FribergHome_API.Models;
 using Microsoft.EntityFrameworkCore;
+using FribergHome_Shared;
 
 namespace FribergHome_API.Data.Seeding
 {

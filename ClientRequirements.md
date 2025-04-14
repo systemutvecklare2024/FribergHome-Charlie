@@ -1,19 +1,18 @@
 # Client-Api communications
 
-
 ## HomeController
 
 ### GET /
 - List of Property with {address{street, muncipality}, id, price, livingspace, rooms, image, description excerpt}, Agency {name, logo}
 - List of muncipalities
 
-## GET /Search
+### GET /Search
 
-## GET /All
+### GET /All
 
-## GET /Agents
+### GET /Agents
 
-## GET /Contact CustomerService?
+### GET /Contact CustomerService?
 
 
 ## AccountController
@@ -34,33 +33,38 @@
 
 ## DashboardController
 
-### GET /Dashboard/Index
+### GET /Index
 - {NumberOfSold, NumberOfProperties, Views}
 
-### GET /Dashboard/MyProperties
-- For filtering {muncipalities, propertytypes}
-- List of properties {Id, image, address{street, city}, muncipality, listprice, rooms, livingspace, propertytype}
 
-### GET /Dashboard/Agency
+## AgenciesController
+
+### GET /Agencies/my
 - {Name, Presentation, LogoUrl}
 - List of Agents {profileimage, FirstName, LastName}
-### POST /Dashboard/Agency
+### POST /Agencies/my
 - {Name, Presentation, LogoUrl}
 
 
-## Property (PropertyController)
-### GET /Property/Create
+## PropertiesController
+
+### GET /Properties/Create
 - List of Agents (from own agency)
 - list of PropertyTypes
-- list of muncipalities
+- list of muncipalities (Should it be its own endpoint? /muncipalities)
 
-### POST /Property/Create
+### POST /Properties/Create
 - {PropertyType(int), BuildYear, Address, LivingSpace, Rooms, SecondaryArea, Lotsize, monthlyfee, operationalcostperyear, listingprice, description, list of imageurls, agentid }
 
-### GET /Property/Edit/1
+### GET /Properties/Edit/1
 - list of all muncipalities
 - list of all agents
 - {PropertyType(int), BuildYear, Address, LivingSpace, Rooms, SecondaryArea, Lotsize, monthlyfee, operationalcostperyear, listingprice, description, list of imageurls, agentid }
 
 ### POST /Property/Edit/1
 - {PropertyType(int), BuildYear, Address, LivingSpace, Rooms, SecondaryArea, Lotsize, monthlyfee, operationalcostperyear, listingprice, description, list of imageurls, agentid }
+
+### GET /Properties/my
+- For filtering {muncipalities, propertytypes}
+- List of properties {Id, image, address{street, city}, muncipality, listprice, rooms, livingspace, propertytype}
+
