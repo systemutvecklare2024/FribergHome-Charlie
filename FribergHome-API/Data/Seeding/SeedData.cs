@@ -385,6 +385,39 @@ namespace FribergHome_API.Data.Seeding
                 },
                 Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Båstad"),
                 RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Bengt")
+
+            },
+
+            // Fredriks Property
+            new Property
+            {
+                ListingPrice = 2895000,
+                LivingSpace = 111,
+                SecondaryArea = 77,
+                LotSize = 1127,
+                Description = "Schysst Mexitegelvilla i liten håla",
+                NumberOfRooms = 5,
+                MonthlyFee = 0,
+                OperationalCostPerYear = 23376,
+                YearBuilt = 1971,
+                PropertyType = PropertyType.House,
+                Images = new List<PropertyImage>
+                {
+                    new PropertyImage { ImgURL = "https://bcdn.se/cache/46406010_1440x0.webp"},
+                    new PropertyImage { ImgURL = "https://bcdn.se/cache/46406011_1440x0.webp"},
+                    new PropertyImage { ImgURL = "https://bcdn.se/cache/46406013_1440x0.webp"},
+                    new PropertyImage { ImgURL = "https://bcdn.se/cache/46406015_1440x0.webp"},
+                    new PropertyImage { ImgURL = "https://bcdn.se/cache/46406016_1440x0.webp"}
+                },
+                Address = new Address
+                {
+                    Street = "Utsiktsvägen 16",
+                    PostalCode = "517 71",
+                    City = "Olsfors",
+                },
+                Muncipality = await ctx.Muncipalities.FirstAsync(m => m.Name == "Bollebygd"),
+                RealEstateAgent = await ctx.Agents.FirstAsync(b => b.FirstName == "Ture")
+
             }};
 			ctx.Properties.AddRange(list);
 			await ctx.SaveChangesAsync();
